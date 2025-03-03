@@ -35,7 +35,7 @@ findRegEx <- function(find, where) {
               furthest_column   = furthest_column))
 }
 
-assembleInsert <-function(info) {
+assembleInsert <- function(info) {
   # Unload variables
   matched.rows      <- info$matched.rows
   matched.cols      <- info$matched.cols
@@ -94,6 +94,15 @@ alignAssignEqual <- function() {
 #' @export
 alignAssignArrow <- function() {
   alignAssign("<-")
+}
+
+#' Align a highlighted region's assignment operators.
+#'
+#' @return Aligns the single tilde operators (\code{~}) within a
+#' highlighted region.
+#' @export
+alignAssignTilde <- function() {
+  alignAssign("~")
 }
 
 guess_operator <- function(area = captureArea(capture())) {
